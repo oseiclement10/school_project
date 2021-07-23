@@ -1,15 +1,22 @@
 import { BrowserRouter as Router , Switch , Route } from 'react-router-dom'; 
-
+import { useState } from 'react';
 import './App.css';
 import HomeScreen from './components/homescreen';
 import Header from './components/header';
 import Login from './components/login';
-import SignUp from './components/signUp'
+import SignUp from './components/signUp';
+import BackDrop from './components/backDrop';
+import SideDrawer from './components/sideDrawer';
 function App() {
+
+  const [toggleSides,setToggleSides] = useState(false);
+
   return (
     <Router>
-      <div className="app">
-      <Header/>
+      
+      <Header show = {()=>setToggleSides(true)} toggle ={toggleSides} />
+      <SideDrawer display = {toggleSides} close={()=>setToggleSides(false)}/>
+      <BackDrop down={()=>setToggleSides(false)} show={toggleSides}/>
 
       {/* header */}
         {/* login */}
@@ -21,6 +28,7 @@ function App() {
         {/* sidedrawer */}
         {/* Navbar */}
       {/*  */}
+
       <main>
        <Switch>
        <Route exact path = "/" component={HomeScreen}></Route>
@@ -39,7 +47,7 @@ function App() {
 
       </main>
       
-    </div>
+
     </Router>
 
     

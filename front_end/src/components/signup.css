@@ -136,3 +136,21 @@
      color:black;
      background-color: cornsilk;
  }
+
+ 
+ @media (max-width:1060px){
+    .signup_container{
+        width:50%;
+    }
+}
+ @media (max-width:960px){
+     .signup_container{
+         width:60%;
+     }
+ }
+ 
+ @media (max-width:600px){
+    .signup_container{
+        width:70%;
+    }
+}

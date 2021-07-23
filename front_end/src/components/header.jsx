@@ -1,13 +1,11 @@
 import './header.css';
-import login from './login';
-import signUp from './signUp';
 import {Link} from 'react-router-dom';
 import {FaTwitter,FaInstagram,FaFacebook,FaCartPlus,FaPiedPiperHat} from 'react-icons/fa';
 import {VscAccount} from 'react-icons/vsc';
 
 
 
- const header = () => {
+ const header = ({toggle,show}) => {
      let account = "";
     return (
         <div className="header"> 
@@ -27,11 +25,19 @@ import {VscAccount} from 'react-icons/vsc';
 
         <div className="header_account">
             {account?<div><VscAccount/></div> : <div className="setup">
-                 <Link to="/login"><span>Login </span>  </Link> |  <Link to="/signup"><span>SignUp </span></Link>
+              <Link to="/signup"><span>SignUp </span></Link> |  <Link to="/login"><span>Login </span>  </Link> 
                </div>}    
         </div>
+        <div className="harmburger_menu" onClick={()=>show()}>
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
-
+            
+        </div>
+      
+       
+        
     )
 }
 export default header;

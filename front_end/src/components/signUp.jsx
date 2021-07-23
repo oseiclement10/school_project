@@ -115,9 +115,9 @@ import { useState } from 'react';
 
                { isStudent && <div className="student_details">
                    <label htmlFor="school"> School </label> 
-                    <input type="text" name="school_name" id="" placeholder="enter your schoolname"/> 
+                    <input type="text" name="school_name" id="school" placeholder="enter your schoolname"/> 
                     <label htmlFor="courses">Courses :</label> 
-                    <input type="text" name="school_courses" id="" placeholder="enter your program    .."/>
+                    <input type="text" name="school_courses" id="courses" placeholder="enter your program    .."/>
                </div>
               }
                <p className="caption">Select Intrests ...</p>

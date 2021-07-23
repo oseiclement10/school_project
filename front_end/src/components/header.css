@@ -6,6 +6,7 @@
     background-color: #171717;
     color: #f4f4f4;
     height:80px;
+    z-index: 50;
 }
 .header .header_logo{
     flex:2;
@@ -63,3 +64,47 @@
     padding:8px;
 }
 
+.header .harmburger_menu{
+    width:30px;
+    height: 30px;
+    display:none;
+    flex-direction: column;
+    cursor:pointer;
+    color:#f4f4f4;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .harmburger_menu div{
+    width:100%;
+    height:3px;
+    background: #f4f4f4;
+}
+.header .harmburger_menu:hover{
+    opacity: 0.5;
+}
+
+.header .harmburger_menu:active{
+    opacity:1;
+}
+
+@media(max-width:960px){
+    .header .harmburger_menu{
+        display:flex;
+    }
+    .header .header_links{
+        display:none;
+    }
+    .header .header_account{
+        display:none;
+    }
+}
+@media(max-width:600px) {
+    .header .harmburger_menu{
+        width:25px;
+        height:25px;
+    }
+    .header .header_logo{
+        font-size: 1rem;
+    }
+}

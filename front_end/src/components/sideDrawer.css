@@ -1,0 +1,97 @@
+.sidedrawer{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width:50%;
+    height: 100vh;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index: 200;
+    background: #f4f4f4;
+    transform: translateX(-100%);
+    transition:all 0.3s ease-out;
+}
+
+.show{
+    transform: translateX(0);
+}
+.sidedrawer .sidedrawer_logo{
+    padding:10px;
+    margin-bottom: 3rem;
+}
+.sidedrawer .sidedrawer_logo a{
+text-decoration: none;
+}
+.sidedrawer .sidedrawer_logo a:hover{
+  opacity:0.8;
+} 
+
+.sidedrawer .sidedrawer_accounts{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding:10px;
+}
+.sidedrawer .sidedrawer_main{
+    padding:8px;
+}
+
+.sidedrawer .sidedrawer_main a{
+    text-decoration: none;
+    color:#f4f4f4;
+    margin:3px;
+    background: darkorchid;
+    border-radius: 5px;
+    padding:7px;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+}
+.sidedrawer .sidedrawer_main a:hover{
+    background:white;
+    color:darkorchid;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+}
+
+.sidedrawer .sidedrawer_accounts .setup{
+    display:flex;
+}
+.sidedrawer .sidedrawer_accounts a{
+    text-decoration: none;
+    color:#f4f4f4;
+    margin:3px;
+    background: darkorchid;
+    border-radius: 5px;
+    padding:7px;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+}
+.sidedrawer .sidedrawer_accounts a:hover{
+    background:white;
+    color:darkorchid;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+}
+
+.sidedrawer .sidedrawer_reachus{
+    
+    align-items: center;
+    padding:10px;
+}
+.sidedrawer .sidedrawer_reachus p.about{
+    color:gray;
+    font-size:1.2em;
+}
+.sidedrawer .sidedrawer_reachus a{
+    text-decoration: none;
+    font-size: 1.3rem;
+    margin:2px;
+}
+.sidedrawer .links{
+    padding:5px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin:2px;
+}
+.sidedrawer .sidedrawer_reachus a:hover{
+    font-size: 1.1rem;
+}
