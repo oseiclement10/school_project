@@ -37,6 +37,7 @@ const uploadProduct = async (req,res) => {
      const title = req.body.title;
      const price = req.body.price;
      const relatedFields = req.body.relatedFields;
+     const description = req.body.description;
      let [imageUrl,contentUrl]= (" ").split(" ");
 
      req.checkBody('title','title is required').notEmpty();
@@ -98,6 +99,7 @@ const uploadProduct = async (req,res) => {
                 newProduct.price = price;
                 newProduct.contentUrl = contentUrl;
                 newProduct.relatedFields = relatedFields;
+                newProduct.description = description;
                 newProduct.save();
                 res.status(200).json({
                     msg:"file uploaded nicely"
