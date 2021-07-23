@@ -1,0 +1,36 @@
+{
+  "name": "mini_project",
+  "version": "1.0.0",
+  "description": "\"A full stack online research sharing platform\"",
+  "main": "server.js",
+  
+  "scripts": {
+    "server": "nodemon back_end/server.js",
+    "start": "nodemon back_end/server.js",
+    "client": "npm start --prefix front_end",
+    "dev": "concurrently \"npm run server\" \"npm run client\" "
+  },
+  "keywords": [
+    "\"mern",
+    "stack",
+    "sharing",
+    "platform\""
+  ],
+  "author": "Osei Asante Clement",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "express-session": "^1.17.2",
+    "express-validator": "^5.3.1",
+    "mongo": "^0.1.0",
+    "mongoose": "^5.13.3",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "nodemon": "^2.0.12"
+  }
+}

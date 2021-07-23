@@ -1,0 +1,138 @@
+.signup_container{
+    color: rgba(0,0,0,0.9);
+    padding:30px;
+    width:40%;
+    background:white;
+    margin:2rem auto;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+}
+.signup_container .signup_header{
+    text-align: center;
+    padding:10px;
+}
+
+.signup_container .personal_details label,.signup_container .account_details label{
+    display:block;
+    padding:8px;
+}
+
+.signup_container .personal_details input[type="text"],.signup_container .personal_details input[type="tel"]{
+    display:block;
+    width:100%;
+    padding:8px;
+    border:1px solid rgba(0,0,0,0.3);
+}
+.signup_container input:active{
+    border:none;
+}
+
+
+.signup_container .personal_details .genderr{
+    display:flex;
+    margin:5px;
+    align-items: center;
+} 
+ .signup_container .personal_details select{
+     height:25px;
+    border:1px solid rgba(0,0,0,0.3);  
+    cursor: pointer;
+    padding:3px;
+}
+
+.signup_container .account_details{
+    margin:10px 0px 10px 0px;
+}
+.signup_container .account_details input[type="text"],.signup_container .account_details input[type="password"],.signup_container .account_details input[type="email"],.signup_container .account_details input[type="tel"]{
+    display:block;
+    width:100%;
+    padding:8px;
+    border:1px solid rgba(0,0,0,0.3);
+}
+.signup_container .account_extras caption{
+    padding:10px;
+}
+.signup_container .checker{
+    text-indent: 15px;
+    display:flex;
+    align-items: center;
+}
+
+.signup_container .student_details{
+    margin:10px 0px 20px 10px;
+}
+.signup_container .student_details label{
+    display:block;
+    padding:8px;
+}
+.signup_container .student_details input{
+    display:block;
+    width:100%;
+    padding:8px;
+    border:1px solid rgba(0,0,0,0.3);
+}
+.signup_container .intrests .intrest label{
+    color:green;
+}
+.intrests{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.intrests .intrest{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    margin:5px;
+}
+.signup_container button{
+    background:#171717;
+    color:#f4f4f4;    
+    padding:8px;    
+    margin-top:8px;
+    width:100%;
+    border:none;
+    font-size: 1.1rem;
+    cursor:pointer;
+    border-radius: 5px;
+    }
+.signup_container button:hover{
+        
+        opacity:0.9;
+        box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+ }
+ .signup_container p.green{
+     color:forestgreen;
+ }
+ .signup_container .account_extras .job{
+     padding:8px;
+     margin:8px;
+ }
+ .signup_container .account_extras .job input{
+    display:block;
+    width:100%;
+    padding:8px;
+    border:1px solid rgba(0,0,0,0.3);
+ }
+ .signup_container p.caption{
+    padding:8px;
+    margin:8px;
+ }
+ .signup_container input[type="submit"]{
+     width:100%;
+     display:block;
+     background: #171717;
+     color:#f4f4f4;
+     border:none;
+     font-size: 1.2rem;
+     padding:8px;
+     cursor:pointer;
+ }
+ .signup_container input[type="submit"]:hover{
+     opacity:0.8;
+ }
+ .signup_container input[type="submit"]:active{
+     color:black;
+     background-color: cornsilk;
+ }

@@ -1,0 +1,65 @@
+.header{
+    padding:15px 30px; 
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #171717;
+    color: #f4f4f4;
+    height:80px;
+}
+.header .header_logo{
+    flex:2;
+    margin-left:1rem;
+    text-indent: 3rem;
+    cursor:pointer;
+}
+.header .header_logo a{
+    text-decoration: none;
+    color:inherit;
+}
+.header .header_logo a:hover{
+    opacity:0.8;
+}
+
+.header .header_logo span{
+    margin-right: -10px;
+    
+}
+
+.header .header_links{
+    flex:1;
+    display:flex;
+    align-items: center;
+    margin-left:5rem;
+}
+.header_links a{
+    text-decoration:none;
+    padding:8px;
+    color:#f4f4f4;
+    transition: all 0.3ms ease-out;
+}
+.header_links a:hover{
+    transform:scale(1.3);
+}
+.header_account{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:10px;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+.header_account a:hover{
+    opacity:0.5;
+}
+.header_account a:active{
+    opacity:1;
+}
+.header_account .setup a{
+    color:#f4f4f4;
+    text-decoration: none;
+}
+.header_account .setup div{
+    padding:8px;
+}
+
