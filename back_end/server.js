@@ -53,6 +53,12 @@ app.use(passport.session());
 app.use('/users',userRoute);
 app.use('/products',productsRoute);
 app.use('/images',imageRoute);
+// app.post('/testing',(req,res)=>{
+//     console.log(req.body)
+//     res.status(200).json({
+//         msg:"completee"
+//     })
+// })
 app.get('/',(req,res)=>{
     res.redirect('/products')
 })

@@ -78,6 +78,12 @@ const registerUser = async(req,res)=>{
     if(req.body.computersciences){
         intrests.push("computersciences")
     }
+    if(req.body.fashion){
+        intrests.push("fashion")
+    }
+    if(req.body.business){
+        intrests.push("business")
+    }
 
 
     const socials = (()=>{

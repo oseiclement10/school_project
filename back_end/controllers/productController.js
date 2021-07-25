@@ -34,10 +34,13 @@ const getProductById = async(req,res) =>{
 const uploadProduct = async (req,res) => {
     
     // preset configuration
+    
      const title = req.body.title;
      const price = req.body.price;
-     const relatedFields = req.body.relatedFields;
+     const relatedFields = [];
      const description = req.body.description;
+     const authorname = req.body.authorName;
+     const date = Date().substring(0,28);
      let [imageUrl,contentUrl]= (" ").split(" ");
 
      req.checkBody('title','title is required').notEmpty();
@@ -49,6 +52,43 @@ const uploadProduct = async (req,res) => {
             msg:"invalid request some parameters missing check data",
             err:errors
         })
+        if(req.body.science){
+            relatedFields.push("science")
+        }
+        if(req.body.technology){
+            relatedFields.push("technology")
+        }
+        if(req.body.cryptography){
+            relatedFields.push("cryptography")
+        }
+        if(req.body.sports){
+            relatedFields.push("sports")
+        }
+        if(req.body.biology){
+            relatedFields.push("biology")
+        }
+        if(req.body.infastructure){
+            relatedFields.push("infastructure")
+        }
+        if(req.body.engineering){
+            relatedFields.push("engineering")
+        }
+        if(req.body.aritificialintelligence){
+            relatedFields.push("AI")
+        }
+        if(req.body.literature){
+            relatedFields.push("literature")
+        }
+        if(req.body.computersciences){
+            relatedFields.push("computersciences")
+        }
+        if(req.body.fashion){
+            relatedFields.push("fashion")
+        }
+        if(req.body.business){
+            relatedFields.push("business")
+        }
+      
      }else{ 
      if(req.files){
          if(req.files.contentUrl){
@@ -73,6 +113,8 @@ const uploadProduct = async (req,res) => {
                     newProduct.imageUrl = imageUrl
                     newProduct.contentUrl = contentUrl;
                     newProduct.relatedFields = relatedFields;
+                    newProduct.date = date;
+                    newProduct.authorName = authorname;
                     newProduct.save();
                     res.status(200).json({
                         msg:"file uploaded correctly"
@@ -86,6 +128,8 @@ const uploadProduct = async (req,res) => {
                     newProduct.imageUrl = imageUrl
                     newProduct.contentUrl = contentUrl;
                     newProduct.relatedFields = relatedFields;
+                    newProduct.date = date;
+                    newProduct.authorName = authorname;
                     newProduct.save();
                     res.status(200).json({
                         msg:"file uploaded correctly"
@@ -100,6 +144,8 @@ const uploadProduct = async (req,res) => {
                 newProduct.contentUrl = contentUrl;
                 newProduct.relatedFields = relatedFields;
                 newProduct.description = description;
+                newProduct.date = date;
+                newProduct.authorName = authorname;
                 newProduct.save();
                 res.status(200).json({
                     msg:"file uploaded nicely"

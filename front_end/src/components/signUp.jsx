@@ -164,6 +164,14 @@ import { useState } from 'react';
             &nbsp;&nbsp; 
             <input type="checkbox" name="artificialintelligence" id="artificialintelligence" />
             </div>
+            <div className="busi intrest">
+              <label htmlFor="business">Business</label>&nbsp;&nbsp;
+              <input type="checkbox" name="business" id="business" />
+            </div>
+            <div className="fashi intrest">
+              <label htmlFor="fashion">fashion</label>&nbsp;&nbsp;
+              <input type="checkbox" name="fashion" id="fashion" />
+            </div>
             </div>
 
               </div>

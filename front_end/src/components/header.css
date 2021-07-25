@@ -5,8 +5,13 @@
     justify-content: space-between;
     background-color: #171717;
     color: #f4f4f4;
-    height:80px;
+    height:auto;
     z-index: 50;
+    position:sticky;
+    width:100%;
+    top:0;
+    overflow: hidden;
+    margin-bottom: 20px;
 }
 .header .header_logo{
     flex:2;

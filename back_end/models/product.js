@@ -9,6 +9,10 @@ const productSchema = mongoose.Schema({
         type:Number,
         required:true,
     },
+    date:{
+        type:String,
+        required:true,
+    },
     description:{
         type:String,
         required:true
@@ -18,6 +22,10 @@ const productSchema = mongoose.Schema({
         required:true,
     },
     imageUrl:{
+        type:String,
+        required:true,
+    },
+    authorName:{
         type:String,
         required:true,
     },

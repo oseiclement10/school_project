@@ -1,4 +1,5 @@
 .signup_container{
+    
     color: rgba(0,0,0,0.9);
     padding:30px;
     width:40%;
@@ -120,6 +121,7 @@
     margin:8px;
  }
  .signup_container input[type="submit"]{
+     margin-top:10px;
      width:100%;
      display:block;
      background: #171717;
