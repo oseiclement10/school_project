@@ -1,0 +1,14 @@
+.homescreen{
+    margin:1rem auto;
+    max-width:1300px;
+}
+.homescreen_title{
+    font-size:1.5rem;
+    color:#171717;
+    margin-bottom: 1rem;
+}
+
+.homescreen_articles{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+}

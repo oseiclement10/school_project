@@ -1,12 +1,11 @@
 import './sharePage.css';
 import { Link } from 'react-router-dom';
-import {FaShare} from 'react-icons/fa';
+import {FiShare} from 'react-icons/fi';
 
  const sharePage = ({show}) => {
     return (
        show && <Link to="/products/upload"><div className="sharepage" >
-     
-       <FaShare/>
+       <FiShare/>
    </div></Link>
     )
 }

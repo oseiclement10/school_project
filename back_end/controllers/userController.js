@@ -4,11 +4,6 @@ const User = require('../models/user');
 const passport = require('passport');
 
 
-const displayHello = async (req,res) => {
-    res.status(200).json({
-        msg:"everything is working"
-    })
-}
 
 const getUser = async (req,res) =>{
     User.findById(req.params.id,(err,user)=>{
@@ -25,8 +20,15 @@ const getUser = async (req,res) =>{
     })
 }
 
+const logOutUser=(req,res)=>{
+    req.logout();
+    res.status(200).json({
+        message:"You have been logged out successfully"
+    })
+}
+
 const registerUser = async(req,res)=>{
-    console.log(req.body);
+    
     const name = req.body.name;
     const email = req.body.email;
     const username = req.body.username;
@@ -153,4 +155,5 @@ const registerUser = async(req,res)=>{
 module.exports ={
     registerUser,
     getUser,
+    logOutUser,
 };

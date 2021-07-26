@@ -1,26 +1,29 @@
 const express = require('express');
 const router = express.Router();
-const {registerUser,getUser} = require('../controllers/userController');
+const {registerUser,getUser,logOutUser} = require('../controllers/userController');
 const passport = require('passport');
 
-router.get('/',(req,res)=>{
-    res.status(200).json({
-        msg:"you have been authenticated"
-    })
-})
 
-router.get('/fail',(req,res)=>{
-    res.status(400).json({
-        msg:"authentication failed"
-    })
-})
 router.post('/signup',registerUser);
-
 router.post('/login',(req,res,next)=>{
-    console.log(req.body);
-    passport.authenticate('local',{
-    successRedirect:"/users",failureRedirect:"/users/fail"})(req,res,next);
+   passport.authenticate('local',(err,user,info)=>{
+       if(err){
+           throw err;
+       }else if(!user){
+           res.status(404).redirect('/login');
+       }else{
+           req.login(user,err=>{
+               if (err)throw err;
+               res.status(400).redirect('/');
+           })
+       }
+   })(req,res,next);
 });
+
+router.get('/currentUser',(req,res)=>{
+    res.send(req.user||null);
+});
+router.get('/logout',logOutUser);
 
 router.get('/:id',getUser);
 

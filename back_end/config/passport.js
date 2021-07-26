@@ -35,8 +35,14 @@ module.exports = function(passport){
       });
       
     passport.deserializeUser(function(id,done){
-        User.findById(id,function(err,user){
-          done(err,user);
-          })
+        User.findById(id,(err,user)=>{
+            let userInformation = {
+                username:user.name,
+                socials:user.socials,
+                contact:user.contact
+            }
+            done(err,userInformation);
+          
+        })
       })    
 }

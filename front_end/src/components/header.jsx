@@ -1,11 +1,12 @@
 import './header.css';
+import SharePage from './sharePage';
 import {Link} from 'react-router-dom';
 import {FaTwitter,FaInstagram,FaFacebook,FaCartPlus,FaPiedPiperHat} from 'react-icons/fa';
 import {VscAccount} from 'react-icons/vsc';
 
 
 
- const header = ({toggle,show}) => {
+ const header = ({toggle,show,allowshare}) => {
      let account = "";
     return (
         <div className="header"> 
@@ -21,6 +22,8 @@ import {VscAccount} from 'react-icons/vsc';
                 
                 <Link to ="/">Browse</Link>
                 <Link to="/"><FaCartPlus/></Link>
+                <SharePage show={allowshare} />
+           
            </div>
 
         <div className="header_account">

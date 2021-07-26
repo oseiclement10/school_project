@@ -60,8 +60,10 @@
 .form_container .relatedfields{
     display:flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
+    align-items:baseline;
+    margin:0px 3px 0px 3px;
+    justify-content:space-between;
+    flex-shrink: inherit;
 }
 .form_container .submitcontroller{
     padding:10px 0px 10px 0px;
@@ -83,4 +85,8 @@
 }
 .form_container .submitcontroller input[type="submit"]:active{
     opacity:1;
+}
+.form_container .intrest{
+    display:flex;
+    align-items: center;
 }

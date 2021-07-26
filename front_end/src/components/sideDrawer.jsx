@@ -2,20 +2,25 @@ import './sideDrawer.css';
 import { FaPiedPiperHat,FaTwitter,FaFacebook,FaInstagram,FaCartPlus } from 'react-icons/fa';
 import { VscAccount } from 'react-icons/vsc';
 import { Link } from 'react-router-dom';
- const sideDrawer = ({display}) => {
+import SharePage from './sharePage';
+ const sideDrawer = ({display,allowshare,close}) => {
      let account ="";
     let classlist = ["sidedrawer"];
     if(display){
         classlist.push('show');
     }
+
     return (
-     <div className={classlist.join(" ")}>
+     <div className={classlist.join(" ")} onClick={()=>close()}   id="sdr">
          <div className="sidedrawer_logo">
          <h2>
                  <Link to ="/"><span><FaPiedPiperHat/></span>Home</Link> 
                 </h2>   
          </div>
-
+         <div className="sidedrawer_accounts">
+             <p>share</p>
+            <SharePage show={allowshare} />
+            </div>
          <div className="sidedrawer_main">
                <Link to ="/">Browse</Link>
             <Link to="/">Cart <FaCartPlus/></Link>
@@ -35,7 +40,7 @@ import { Link } from 'react-router-dom';
                 <a className="instagram" href = "https://www.instagram.com" target="_blank" rel="noreferrer"><FaInstagram/></a>
              </div>
          
-
+           
           </div>
               
                 

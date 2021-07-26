@@ -9,6 +9,7 @@ import BackDrop from './components/backDrop';
 import SideDrawer from './components/sideDrawer';
 import SharePage from './components/sharePage';
 import Upload from './components/upload';
+import { ProductScreen } from './components/ArticleScreen';
 function App() {
 
   const [toggleSides,setToggleSides] = useState(false);
@@ -17,10 +18,10 @@ function App() {
   return (
     <Router>
       
-      <Header show = {()=>setToggleSides(true)} toggle ={toggleSides} />
-      <SideDrawer display = {toggleSides} close={()=>setToggleSides(false)}/>
+      <Header show = {()=>setToggleSides(true)} toggle ={toggleSides} allowshare = {userExist} />
+      <SideDrawer display = {toggleSides} close={()=>setToggleSides(false)} allowshare = {userExist}/>
       <BackDrop down={()=>setToggleSides(false)} show={toggleSides}/>
-      <SharePage show={userExist} />
+      
       
       {/*  */}
       
@@ -33,10 +34,11 @@ function App() {
       <main>
        <Switch>
        <Route exact path = "/" component={HomeScreen}></Route>
+       <Route exact path ="/article/:id" component ={ProductScreen}></Route>
        <Route exact path = "/login" component={Login}></Route>
        <Route exact path = "/signup" component={SignUp}></Route>
-       <Route exact path="/products/upload" component={Upload}></Route>
-       <Route exact path = "/" component={HomeScreen}></Route>
+       <Route exact path="/articles/upload" component={Upload}></Route>
+       
        </Switch> 
     {/* homescreeen */}
          {/* various cartegories*/}

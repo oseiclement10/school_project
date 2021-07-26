@@ -1,8 +1,41 @@
 import React from 'react'
+import { useEffect } from 'react';
+import Article from './Article';
+import {useSelector,useDispatch} from 'react-redux';
+import {getAllArticles} from '../redux/actions/articleActions';
+import './homescreen.css';
+
  const Homescreen = () => {
+     const dispatch = useDispatch();
+     const  getArticles = useSelector(state=>state.articles);
+     const {articles,loading,error} = getArticles;
+        
+     useEffect(()=>{
+            dispatch(getAllArticles())
+        },[dispatch]);
+
     return (
-        <div>
-            welcome to homescreen ..
+        <div className="homescreen">
+         { error? "" : <h2 className="homescreen_title">
+                Trending Articles      
+         </h2>          } 
+        
+         <div className="homescreen_articles">
+         {loading ? <h2>Loading ... </h2>:error?<h2>We will be right back .....</h2>:
+         articles.map((article,index)=><Article
+         key={index}
+         articleId= {article._id}
+         name = {article.title}
+         price = {article.price}
+         description = {article.description}
+         imgUrl = {article.imageUrl}
+         author = {article.authorName}
+         contentUrl = {article.authorName}
+         date = {article.date}
+         />)
+         }
+         </div>
+        
         </div>
     )
 }
