@@ -1,0 +1,21 @@
+.footer{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    width:100%;
+    padding:30px;
+    background:rgb(0, 0, 0);
+    color: white;
+    margin-top: 6rem;
+}
+.footer .description{
+    float:right;
+}
+.footer .reachus{
+    margin-top:15px;
+    padding-bottom: 10px;
+}
+.footer .reachus a {
+    color:white;
+    padding:5px;
+}

@@ -22,6 +22,7 @@ const getUser = async (req,res) =>{
 
 const logOutUser=(req,res)=>{
     req.logout();
+    console.log("logout hitted");
     res.status(200).json({
         message:"You have been logged out successfully"
     })

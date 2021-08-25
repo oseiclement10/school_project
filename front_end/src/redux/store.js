@@ -3,14 +3,23 @@ import {composeWithDevTools}  from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import {getArticles,getArticleDetail} from './reducers/articleReducer';
 import { getUser } from './reducers/userReducer';
+import {cartReducer} from './reducers/cartReducer';
 const middleware = [thunk];
 
 const allReducers = combineReducers({
     articles:getArticles,
     getArticleDetail:getArticleDetail,
     currentUser:getUser,
+    cart:cartReducer,
 });
+const cart_from_local_storage = localStorage.getItem('cart')?JSON.parse(localStorage.getItem("cart")):[];
 
-const store = createStore(allReducers,composeWithDevTools(applyMiddleware(...middleware)));
+const INITIAL_STATE = {
+    cart:{
+       cartItems:cart_from_local_storage,
+    }
+ };
+
+const store = createStore(allReducers,INITIAL_STATE,composeWithDevTools(applyMiddleware(...middleware)));
 
 export default store;

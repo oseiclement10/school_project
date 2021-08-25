@@ -4,15 +4,18 @@ export const getUser = (state={user:{}},action)=>{
     switch(action.type){
         case actionTypes.LOGIN_USER_SUCCESS :
             return {
-                user:action.payload
+                user:action.payload,
+                islogged:true
             }
         case actionTypes.LOGIN_USER_FAIL :
             return {
-                user:action.payload
+                error:action.payload,
+                islogged:false
             }
         case actionTypes.LOGOUT_USER :
             return {
-                user:{}
+                user:{},
+                islogged:false
             } 
         default:
             return state;    

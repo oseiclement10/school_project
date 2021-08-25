@@ -5,23 +5,38 @@
     justify-content: space-between;
     background-color: #171717;
     color: #f4f4f4;
-    height:auto;
+    height:80px;
     z-index: 50;
     position:sticky;
     width:100%;
     top:0;
     overflow: hidden;
-    margin-bottom: 20px;
 }
 .header .header_logo{
     flex:2;
-    margin-left:1rem;
-    text-indent: 3rem;
+    margin-left:0;
+    text-indent: 1.5rem;
     cursor:pointer;
+}
+.header .cart{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.header a.home{
+    padding-bottom:7px;
+}
+
+.header .active{
+    border-bottom:3px solid white;
+}
+#logo2{
+    display:none;
 }
 .header .header_logo a{
     text-decoration: none;
-    color:inherit;
+    color:white;
+    
 }
 .header .header_logo a:hover{
     opacity:0.8;
@@ -55,6 +70,12 @@
     font-size: 1.3rem;
     cursor: pointer;
 }
+.header_account a{
+    text-decoration:none;
+    padding:8px;
+    color:#f4f4f4;
+    transition: all 0.3ms ease-out;
+}
 .header_account a:hover{
     opacity:0.5;
 }
@@ -68,7 +89,14 @@
 .header_account .setup div{
     padding:8px;
 }
-
+.header .logger{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header .logger:hover{
+    opacity: 0.8;
+}
 .header .harmburger_menu{
     width:30px;
     height: 30px;
@@ -97,19 +125,26 @@
     .header .harmburger_menu{
         display:flex;
     }
+    
     .header .header_links{
         display:none;
     }
     .header .header_account{
         display:none;
     }
+    .header .header_logo .home{
+        display:none;
+    }
 }
 @media(max-width:600px) {
+    .header .header_logo{
+       margin-left: 35px;
+    }
     .header .harmburger_menu{
         width:25px;
         height:25px;
     }
-    .header .header_logo{
-        font-size: 1rem;
-    }
+    
+   
 }
+

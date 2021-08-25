@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width:50%;
+    width:70%;
     height: 100vh;
     position:fixed;
     top:0;
@@ -36,6 +36,24 @@ text-decoration: none;
 }
 .sidedrawer .sidedrawer_main{
     padding:8px;
+}
+
+.sidedrawer .logout{
+    display: flex;
+    align-items: center;
+    color:#f4f4f4;
+    margin:3px;
+    background: darkorchid;
+    border-radius: 5px;
+    padding:7px;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);  
+    cursor:pointer;
+    justify-content: space-between;  
+}
+.sidedrawer .logout:hover{
+    background:white;
+    color:darkorchid;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
 }
 
 .sidedrawer .sidedrawer_main a{

@@ -5,8 +5,10 @@ const passport = require('passport');
 
 
 router.post('/signup',registerUser);
+
+
 router.post('/login',(req,res,next)=>{
-   passport.authenticate('local',(err,user,info)=>{
+        passport.authenticate('local',(err,user,info)=>{
        if(err){
            throw err;
        }else if(!user){
@@ -14,15 +16,17 @@ router.post('/login',(req,res,next)=>{
        }else{
            req.login(user,err=>{
                if (err)throw err;
-               res.status(400).redirect('/');
+               res.status(200).redirect('/');
            })
        }
    })(req,res,next);
 });
 
+
 router.get('/currentUser',(req,res)=>{
     res.send(req.user||null);
 });
+
 router.get('/logout',logOutUser);
 
 router.get('/:id',getUser);

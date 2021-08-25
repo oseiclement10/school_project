@@ -1,14 +1,14 @@
 .sharepage{
-    
-    width:30px;
+    margin-left:10px;
+    width:75px;
     height: 30px;
     background: #171717;
     color: #fafafa;
-    
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
+    font-size: 1.2rem;
 }
 .sharepage:hover{
     opacity: 0.8;

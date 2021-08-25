@@ -1,0 +1,59 @@
+.aboutus{
+    padding:20px;
+    background: white;
+    width:80%;
+    margin:auto;
+    
+}
+.aboutus #abs{
+    font-weight: bold;
+    font-size: 2rem;
+   
+}
+.aboutus #wts{
+background-image: linear-gradient(to left,gray,black, green,darkgreen,lightgreen,gray,black);
+color:transparent;
+background-clip: text;
+}
+.aboutus .heading p{
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: sans-serif;
+    padding:10px;
+    margin-bottom:20px;
+   
+}
+
+.aboutus .description{
+    padding:10px;
+    word-spacing: 5px;
+}
+.aboutus .faqs{
+    padding:10px;
+    word-spacing: 5px;
+}
+.aboutus .faqs h3{
+    font-size: 1.4rem;
+     padding:10px;
+     
+}
+.aboutus .faqss{
+    padding:10px;
+}
+.aboutus .faqs h4{
+    padding-bottom: 8px;
+    color:tomato;
+}
+.aboutus p a{
+    text-decoration: none;
+    font-size: 1.3rem ;
+}
+
+.aboutus .note{
+    background: gray;
+    padding:10px;
+    color:white;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.3);
+    opacity: 0.8;
+    border-radius: 5px;
+}

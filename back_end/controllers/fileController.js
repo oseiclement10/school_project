@@ -1,5 +1,5 @@
 const Product = require('../models/product');
-
+const path = require('path');
 const fileContoller = async(req,res) =>{
     let query={
         contentUrl:`http://localhost:5000/files/${req.params.id}`
@@ -16,7 +16,14 @@ const fileContoller = async(req,res) =>{
     if(contFile){
         let contUrl = req.params.id;
         try{
-            res.sendFile(`${contUrl}`,{root:'../mini_project/back_end/uploads/files'})
+            res.download(path.join('../mini_project/back_end/uploads/files',`${contUrl}`),(err)=>{
+                if(err){
+                    console.error(err);
+                    res.status(400).json({
+                        message:"bad request"
+                    })
+                }
+            });
         }catch(err){
             console.error(err);
             res.json({

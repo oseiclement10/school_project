@@ -3,11 +3,18 @@ import { FaPiedPiperHat,FaTwitter,FaFacebook,FaInstagram,FaCartPlus } from 'reac
 import { VscAccount } from 'react-icons/vsc';
 import { Link } from 'react-router-dom';
 import SharePage from './sharePage';
- const sideDrawer = ({display,allowshare,close}) => {
-     let account ="";
+import { useSelector,useDispatch } from 'react-redux';
+import {logOutUser} from '../redux/actions/userActions';
+ const SideDrawer = ({display,allowshare,close}) => {
+    const {islogged} = useSelector(state=>state.currentUser);
     let classlist = ["sidedrawer"];
     if(display){
         classlist.push('show');
+    }
+    let dispatch = useDispatch();
+    let logoutt = () => {
+
+        dispatch(logOutUser());
     }
 
     return (
@@ -17,19 +24,20 @@ import SharePage from './sharePage';
                  <Link to ="/"><span><FaPiedPiperHat/></span>Home</Link> 
                 </h2>   
          </div>
+
          <div className="sidedrawer_accounts">
-             <p>share</p>
-            <SharePage show={allowshare} />
+                <SharePage/>
             </div>
          <div className="sidedrawer_main">
-               <Link to ="/">Browse</Link>
-            <Link to="/">Cart <FaCartPlus/></Link>
+              
+            <Link to="/cart">Cart <FaCartPlus/></Link>
         </div> 
 
          <div className="sidedrawer_accounts">
-         {account?<div><VscAccount/></div> : <div className="setup">
+         {islogged?<div className="logout" onClick={logoutt}><VscAccount/> &nbsp;Logout</div> : <div className="setup">
               <Link to="/signup"><span>SignUp </span></Link>   <Link to="/login"><span>&nbsp; Login </span>  </Link> 
                </div>}
+           <Link to ="/about">About</Link>    
          </div>
 
          <div className="sidedrawer_reachus">
@@ -49,4 +57,4 @@ import SharePage from './sharePage';
     )
 }
 
-export default sideDrawer;
+export default SideDrawer;

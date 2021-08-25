@@ -1,9 +1,12 @@
 import './backDrop.css';
 
 
- const backDrop = ({down,show}) => {
+const BackDrop = ({down,show,harmburger}) => {
+   
     return (
-        show && <div className="backdrop" onClick={()=>down()}></div>  
+        show && <div className="backdrop" onClick={()=>down()}>
+            <div className="times" onClick={()=>harmburger()}>&times;</div>
+        </div>  
     )
 }
-export default backDrop;
+export default BackDrop;

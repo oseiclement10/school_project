@@ -118,9 +118,7 @@ const uploadProduct = async (req,res) => {
                     newProduct.authorName = authorname;
                     newProduct.description = description;
                     newProduct.save();
-                    res.status(200).json({
-                        msg:"file uploaded correctly"
-                    });
+                    res.status(200).redirect('/');
                 }
       		    });
                  }else{
@@ -134,9 +132,7 @@ const uploadProduct = async (req,res) => {
                     newProduct.authorName = authorname;
                     newProduct.description = description;
                     newProduct.save();
-                    res.status(200).json({
-                        msg:"file uploaded correctly"
-                    });
+                    res.status(200).redirect('/');
 
                 }
             })}
@@ -150,12 +146,12 @@ const uploadProduct = async (req,res) => {
                 newProduct.date = date;
                 newProduct.authorName = authorname;
                 newProduct.save();
-                res.status(200).json({
-                    msg:"file uploaded nicely"
-                });
+                res.status(200).redirect('/');
+                
                  }
 }
 }
+
 module.exports = {
     uploadProduct,
     getAllproducts,

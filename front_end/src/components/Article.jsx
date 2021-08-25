@@ -1,5 +1,6 @@
 import './Article.css'
 import {Link} from 'react-router-dom';
+
  const Product = ({name,price,description,imgUrl,articleId,date,author}) => {
     return (
         <div className="article">

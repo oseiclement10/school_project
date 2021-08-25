@@ -13,11 +13,16 @@ const session = require('express-session');
 const upload = require('express-fileupload');
 const path = require('path');
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
 
 const upPath = path.join(__dirname,'uploads','images');
 
 //middlewares
-
+app.use((req,res,next)=>{
+    res.header("Access-Control-Allow-Origin","*");
+    res.header("Access-Control-Allow-Headers","Origin, X-Requested-With ,Content-Type, Accept");
+    next();
+})
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
@@ -49,7 +54,12 @@ app.use(expressValidator({
         };
     }
     }));
-    
+
+// app.use((req,res,next)=>{
+//     res.header("Access-Control-Allow-Origin","*");
+//     res.header("Access-Control-Allow-Headers","Origin, X-Requested-With, Content-Type, Accept");
+//     next();
+// })    
 app.use('/users',userRoute);
 app.use('/products',productsRoute);
 app.use('/images',imageRoute);
@@ -59,7 +69,7 @@ app.use('/files',fileRoute);
 app.get('/',(req,res)=>{
     res.redirect('/products')
 })
-
+                
 app.listen(PORT,()=>console.log(`server started at port ${PORT} `));
 connectDB();
 

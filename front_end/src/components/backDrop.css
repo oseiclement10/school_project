@@ -5,6 +5,16 @@
     z-index: 100;
     background:rgba(0,0,0,0.5);
     top:0;
-    left:0;
-   
+    left:0;  
+}
+.backdrop .times{
+    color:white;
+    font-size: 5rem;
+    position: absolute;
+    top:1px;
+    right:20px;
+    cursor: pointer;
+}
+.backdrop .times:hover{
+    opacity:0.7;
 }

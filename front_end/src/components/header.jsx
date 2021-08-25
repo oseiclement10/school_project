@@ -1,46 +1,58 @@
 import './header.css';
 import SharePage from './sharePage';
-import {Link} from 'react-router-dom';
-import {FaTwitter,FaInstagram,FaFacebook,FaCartPlus,FaPiedPiperHat} from 'react-icons/fa';
+import {Link,NavLink} from 'react-router-dom';
+import {FaTwitter,FaInstagram,FaFacebook,FaCartPlus} from 'react-icons/fa';
 import {VscAccount} from 'react-icons/vsc';
+import {useDispatch} from 'react-redux';
+import {logOutUser} from '../redux/actions/userActions';
+ const Header = ({show,islogged,notifyLogOut}) => {
 
+      let dispatch = useDispatch();
+      let logout = () => {
+        dispatch(logOutUser());
+        notifyLogOut();
+    }
+      
 
-
- const header = ({toggle,show,allowshare}) => {
-     let account = "";
     return (
         <div className="header"> 
             <div className="header_logo">
                 <h2>
-                 <Link to ="/"><span><FaPiedPiperHat/></span>  shareLearn.org</Link> 
+                <NavLink to="/" exact activeClassName="active" className="home page">Home</NavLink> 
+                &nbsp; &nbsp; &nbsp; &nbsp;
+                 <Link to ="/"  className="homelogo" id="logo1">  shareLearn.org</Link> 
                 </h2>   
             </div>
+            
         <div className="header_links">
                 <a className="twitter"  href ="https://www.twitter.com"  rel="noreferrer" target="_blank"><FaTwitter/></a>
                 <a className="facebook" href = "https://www.facebook.com" target="_blank" rel="noreferrer"><FaFacebook/></a>
                 <a className="instagram" href = "https://www.instagram.com" target="_blank" rel="noreferrer"><FaInstagram/></a>
                 
-                <Link to ="/">Browse</Link>
-                <Link to="/"><FaCartPlus/></Link>
-                <SharePage show={allowshare} />
+               
+                <NavLink to="/cart" className="page" activeClassName="active"><div className="cart"><FaCartPlus/>Cart</div></NavLink>
+                
+                <SharePage classname="sharepage"/>
            
            </div>
 
         <div className="header_account">
-            {account?<div><VscAccount/></div> : <div className="setup">
-              <Link to="/signup"><span>SignUp </span></Link> |  <Link to="/login"><span>Login </span>  </Link> 
-               </div>}    
-        </div>
-        <div className="harmburger_menu" onClick={()=>show()}>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
             
+            { islogged ? <div className="logger" onClick={()=>logout()}><VscAccount/> <span> Logout </span></div> : <div className="setup">
+              <NavLink to="/signup" activeClassName="active"><span>SignUp </span></NavLink> | <NavLink to="/login" activeClassName="active"><span >Login </span>  </NavLink> 
+              
+               </div>}  
+
+             <NavLink to="/about" className="about" activeClassName="active">| About</NavLink>  
         </div>
-      
-       
+        <div className="harmburger_menu" id="harmburger1" onClick={()=>show()}>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+           </div>
         
     )
 }
-export default header;
+export default Header;

@@ -5,10 +5,17 @@ import * as actionTypes from '../constants/userConstant';
 export const getUserr = () => async(dispatch)=>{
     try{
         const {data} = await axios.get('/users/currentUser');
-    dispatch({
-        type:actionTypes.LOGIN_USER_SUCCESS,
-        payload:data,
-    });
+        if(data === ""){
+            dispatch({
+                type:actionTypes.LOGIN_USER_FAIL,
+                payload:{}
+            })
+        }else{
+            dispatch({
+                type:actionTypes.LOGIN_USER_SUCCESS,
+                payload:data,
+            });        
+        }
     }catch(error){
         dispatch({
             type:actionTypes.LOGIN_USER_FAIL,
@@ -19,6 +26,7 @@ export const getUserr = () => async(dispatch)=>{
 }
 
 export const logOutUser = () => async(dispatch)=>{
+    await axios.get('/users/logout');
     dispatch({
         type:actionTypes.LOGOUT_USER
     })
