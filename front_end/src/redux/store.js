@@ -4,6 +4,7 @@ import thunk from 'redux-thunk';
 import {getArticles,getArticleDetail} from './reducers/articleReducer';
 import { getUser } from './reducers/userReducer';
 import {cartReducer} from './reducers/cartReducer';
+import {getAuthor} from './reducers/authorReducer';
 const middleware = [thunk];
 
 const allReducers = combineReducers({
@@ -11,6 +12,7 @@ const allReducers = combineReducers({
     getArticleDetail:getArticleDetail,
     currentUser:getUser,
     cart:cartReducer,
+    author:getAuthor,
 });
 const cart_from_local_storage = localStorage.getItem('cart')?JSON.parse(localStorage.getItem("cart")):[];
 

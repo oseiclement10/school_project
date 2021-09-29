@@ -12,7 +12,7 @@ router.post('/login',(req,res,next)=>{
        if(err){
            throw err;
        }else if(!user){
-           res.status(404).redirect('/login');
+           res.status(404).redirect('/login/error');
        }else{
            req.login(user,err=>{
                if (err)throw err;
@@ -22,12 +22,12 @@ router.post('/login',(req,res,next)=>{
    })(req,res,next);
 });
 
-
 router.get('/currentUser',(req,res)=>{
     res.send(req.user||null);
 });
 
 router.get('/logout',logOutUser);
+
 
 router.get('/:id',getUser);
 

@@ -18,6 +18,7 @@ export const getAllArticles = () => async (dispatch)=>{
    }
 
 }
+
 export const getArticleDetail = (id) =>async(dispatch)=>{
     
     try{

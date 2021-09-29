@@ -44,6 +44,7 @@
 .form_container textarea{
     width:90%;
     height:80px;
+    padding:10px;
 }
 .form_container .content_cont,.form_container .img_upload{
     padding:10px 0px 10px 0px;

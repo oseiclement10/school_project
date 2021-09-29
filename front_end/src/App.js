@@ -9,6 +9,7 @@ import HomeScreen from './components/homescreen';
 import Header from './components/header';
 import Login from './components/login';
 import SignUp from './components/signUp';
+import {LoginFail } from './components/LoginFail';
 import BackDrop from './components/backDrop';
 import SideDrawer from './components/sideDrawer';
 import Upload from './components/upload';
@@ -16,6 +17,8 @@ import { ProductScreen } from './components/ArticleScreen';
 import CartScreen from './components/CartScreen';
 import { About } from './components/About';
 import { Search } from './components/Search';
+import {Author} from './components/Author';
+import {SignUpSuccess} from './components/SignUpSuccess';
 toast.configure();
 function App() {
 
@@ -59,9 +62,12 @@ function App() {
        <Route exact path = "/search/:id" component={Search}></Route>
        <Route exact path ="/article/:id" component ={ProductScreen}></Route>
        <Route exact path = "/login" component={Login} ></Route>
+       <Route exact path="/login/error" component={LoginFail}></Route>
        <Route exact path = "/signup" component={SignUp}></Route>
+       <Route exact path = "/signup/success" component={SignUpSuccess}></Route>
        <Route exact path="/cart" component={CartScreen}></Route>
        <Route exact path="/articles/upload" component={Upload}></Route>
+       <Route exact path="/author/:id" component={Author}></Route>
        <Route exact path ="/about" component={About}></Route>
        </Switch> 
       </main>

@@ -89,14 +89,6 @@ const registerUser = async(req,res)=>{
     }
 
 
-    const socials = (()=>{
-        if (req.body.socials){
-            let [key,val] = req.body.socials.split(" ");
-            let map = new Map();
-            return map.set(key,val);
-        }
-        return req.body.socials;
-    })();
 
     req.checkBody('name','Name is required').notEmpty();
     req.checkBody('username','Username is required').notEmpty();
@@ -121,7 +113,6 @@ const registerUser = async(req,res)=>{
         newUser.intrests = intrests;
         newUser.publications = publications;
         newUser.momo = momo;
-        newUser.socials = socials;
         newUser.profession = profession;
         newUser.gender = gender;
 
@@ -138,9 +129,7 @@ const registerUser = async(req,res)=>{
                         if(err){
                         console.log(err)
                      }else{
-                        res.status(200).json({
-                            msg:"User created Succesfully!"
-                        });
+                        res.status(200).redirect('/signup/success');
                      }
                     });
                 }

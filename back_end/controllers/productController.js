@@ -5,6 +5,12 @@ const PATH = require('path');
 const iPath = 'http://localhost:5000/images/';
 const jPath = 'http://localhost:5000/files/';
 
+//i need a function that will push the id of the newly created article to the publications of the current user
+ 
+const linker = async(userId,productId)=>{
+
+}
+
 const getAllproducts = async(req,res) =>{
     try{
         let data = await Product.find({});
@@ -17,6 +23,8 @@ const getAllproducts = async(req,res) =>{
         process.exit(1);
     }
 }
+
+
 
 const getProductById = async(req,res) =>{
     try{
@@ -34,14 +42,19 @@ const getProductById = async(req,res) =>{
 
 const uploadProduct = async (req,res) => {
     
-    // preset configuration
-     console.log(req.body);
-     console.log(req.files);
+    if(req.user){
+        console.log(req.user);
+    }else{
+        console.log("no user");
+    }
+    
      const title = req.body.title;
      const price = req.body.price || 0;
      const relatedFields = [];
      const description = req.body.description;
      const authorname = req.body.authorName;
+     const authorId = req.user.id;
+     console.log(authorId);
      const date = Date().substring(0,28);
      let [imageUrl,contentUrl] = (" ").split(" ");
 
@@ -117,6 +130,7 @@ const uploadProduct = async (req,res) => {
                     newProduct.date = date;
                     newProduct.authorName = authorname;
                     newProduct.description = description;
+                    newProduct.authorId = authorId;
                     newProduct.save();
                     res.status(200).redirect('/');
                 }
@@ -130,6 +144,7 @@ const uploadProduct = async (req,res) => {
                     newProduct.relatedFields = relatedFields;
                     newProduct.date = date;
                     newProduct.authorName = authorname;
+                    newProduct.authorId = authorId;
                     newProduct.description = description;
                     newProduct.save();
                     res.status(200).redirect('/');
@@ -144,6 +159,7 @@ const uploadProduct = async (req,res) => {
                 newProduct.relatedFields = relatedFields;
                 newProduct.description = description;
                 newProduct.date = date;
+                newProduct.authorId = authorId;
                 newProduct.authorName = authorname;
                 newProduct.save();
                 res.status(200).redirect('/');

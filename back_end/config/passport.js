@@ -38,7 +38,7 @@ module.exports = function(passport){
         User.findById(id,(err,user)=>{
             let userInformation = {
                 username:user.name,
-                socials:user.socials,
+                id:user._id,
                 contact:user.contact
             }
             done(err,userInformation);

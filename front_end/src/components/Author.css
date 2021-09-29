@@ -1,0 +1,29 @@
+.author_container{
+    padding:20px;
+    background:white;
+    width:50%;
+    margin:auto;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.author_heading{
+    font-size: 2rem;
+    padding:10px;
+}
+.author_container .author_avi{ 
+    height:200px;
+    width:200px;
+    border-radius:50%;
+    background-image: url('../assets/images/male.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.author_container .author_description{
+    padding-top:30px;   
+    word-spacing: 2px;
+}
+.author_container .author_description p{
+    color:gray;
+} 

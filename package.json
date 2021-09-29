@@ -28,7 +28,8 @@
     "mongo": "^0.1.0",
     "mongoose": "^5.13.3",
     "passport": "^0.4.1",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "stripe": "^8.170.0"
   },
   "devDependencies": {
     "concurrently": "^6.2.0",

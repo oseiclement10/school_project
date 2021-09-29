@@ -1,0 +1,42 @@
+.signupsuccesscontainer{
+    background:white;
+    height:100vh;
+}
+.signupsuccess{
+    margin-top:30px;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width:60%;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    padding:50px;
+    background:rgb(280,280,280);
+    height:50%;
+    box-shadow: 2px 4px 8px 0px rgba(0,0,0,0.12);
+}
+
+.signupsuccess > p{
+    padding:10px;
+    font-size: 2rem;
+    color:green;
+}
+
+.signupsuccess .loginhere{
+    padding:10px;
+}
+.loginhere a{
+    text-decoration: none;
+    display: block;
+    font-size: 1.6rem;
+    border-radius: 10px;
+    border:none;
+    padding:10px;
+    color:black;
+    box-shadow: 2px 4px 8px 0px rgba(0,0,0,0.12);
+}
+.loginhere a:hover{
+    color:white;
+    background:#171717;
+}

@@ -65,9 +65,6 @@ import { useState } from 'react';
                 <label htmlFor="contact">contact :</label>
                 <input type="tel" name="contact" id="contact" placeholder="enter your contact"/>
 
-                <label htmlFor="socials">socials :</label>
-                <input type="text" name="socials" id="socials" placeholder="enter socials egs: twitter @yourusername"/>
-
                 <div className="genderr">
                  <label htmlFor="gender" >gender :</label>
                  <select name="gender" id="gender">

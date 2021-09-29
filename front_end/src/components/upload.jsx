@@ -1,11 +1,17 @@
 import './upload.css';
 import { useState } from 'react';
+import {useSelector} from 'react-redux';
 import {AiOutlineRead} from 'react-icons/ai'
  const Upload = () => {
+     const currentUser = useSelector(state=>state.currentUser);
+     const {islogged} = currentUser;
+
      
-     const __user = "Osei Asante Clement"
+     console.log(currentUser.user.username);
+     const __user = islogged? currentUser.user.username : "";
      const [showPrice,setShowPrice] = useState(true);
-    return (
+    
+     return (
         <div className="upload_container">
             <div className="upload_header">
                 <h2>Share Articles or Research </h2>

@@ -28,7 +28,7 @@ export const ProductScreen = ({match,history}) => {
     return (
         <div className="articlescreen">
             {
-                loading? <h2>getting product information ...</h2> : error? <h2> product unavailable please go back </h2> : (
+                loading? <h2>getting article information ...</h2> : error? <h2> article unavailable please go back </h2> : (
                  <>
                     <div className="articlescreen_top">
                     <div className="articlescreen_img">
@@ -40,9 +40,14 @@ export const ProductScreen = ({match,history}) => {
                     </div>
                     
                     <div className="articlescreen_bottom">
+                       <Link to={`/author/${article.authorId}`} id="authorIdentifier">
+
                         <p className="authorname">
                         {article.authorName + "( Author )"}    
-                        </p>
+                        </p>   
+                        
+                        </Link> 
+                        
                         {article.price===0? <div className="description_free"> <p>Free <GiCheckMark/></p></div> :<div className="description_free"><p>${article.price}</p></div> } 
                         
                         <div className="description">

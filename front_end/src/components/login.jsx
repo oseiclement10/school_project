@@ -1,11 +1,20 @@
 import './login.css';
 import { Link } from 'react-router-dom';
 import {VscAccount} from 'react-icons/vsc';
+import { useEffect } from 'react';
 
- const Login = () => {
-        
-        
+ const Login = ({err,errFunc}) => {
+     useEffect(()=>{
+         if(err){
+             errFunc();
+         }
+     },[err,errFunc]);
     return (
+        <>
+        <div className="incorrect">
+        <p>
+        </p>
+        </div>
         <div className="container">
             <form action="/users/login" method="POST" >
          <div className="caption">
@@ -30,7 +39,7 @@ import {VscAccount} from 'react-icons/vsc';
        </div>
        
         </div>
-       
+       </>
     )
 }
 export default Login;
