@@ -1,7 +1,7 @@
 import './Article.css'
 import {Link} from 'react-router-dom';
 
- const Product = ({name,price,description,imgUrl,articleId,date,author,authorId}) => {
+ const Product = ({name,description,imgUrl,articleId,date,author,authorId}) => {
     return (
         <div className="article">
           <img src={imgUrl} alt={name} />

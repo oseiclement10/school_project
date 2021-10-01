@@ -8,7 +8,7 @@ export const getAuthor = (state ={author:{}},action)=>{
             }
         case actionTypes.GET_AUTHOR_FAILURE :
             return{
-                error:action.payload ,
+                error:action.payload,
             }
         case actionTypes.RESET_AUTHOR :
             return{

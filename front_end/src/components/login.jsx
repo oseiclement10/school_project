@@ -1,12 +1,15 @@
 import './login.css';
 import { Link } from 'react-router-dom';
 import {VscAccount} from 'react-icons/vsc';
-import { useEffect } from 'react';
+import { useEffect,useRef} from 'react';
 
  const Login = ({err,errFunc}) => {
+     const inputRef = useRef();
      useEffect(()=>{
          if(err){
+
              errFunc();
+             inputRef.current.focus();
          }
      },[err,errFunc]);
     return (
@@ -26,7 +29,7 @@ import { useEffect } from 'react';
              <label htmlFor="username">
                  Username <br />
              </label> 
-             <input type="text" name="username" id="un" placeholder="  ... username" required /> 
+             <input type="text" name="username" id="un" placeholder="  ... username" required ref={inputRef} /> 
             <label htmlFor="password">
                 Password <br />
             </label>

@@ -6,18 +6,25 @@ const passport = require('passport');
 
 
 const getUser = async (req,res) =>{
-    User.findById(req.params.id,(err,user)=>{
-        if(err){
-            console.error(err);
-            res.status(400).json({
-                msg:"no user with such id"
-            })
-        }else{
-            res.status(200).json({
-                msg:user
-            })
-        }
-    })
+    try{
+        User.findById(req.params.id,(err,user)=>{
+            if(err){
+                console.error(err);
+                res.status(400).json({
+                    msg:"no user with such id"
+                })
+            }else{
+                res.status(200).json({
+                    msg:user
+                })
+            }
+        })
+        process.exit(1);
+    }catch(error){
+        console.log(error);
+        process.exit(1);
+    }
+    
 }
 
 const logOutUser=(req,res)=>{
@@ -104,6 +111,7 @@ const registerUser = async(req,res)=>{
             msg:"error in form data"
         });
     }else{
+        try{
         let newUser = new User();
         newUser.name = name;
         newUser.email = email;
@@ -137,7 +145,12 @@ const registerUser = async(req,res)=>{
           }
             
         })
+    }catch(error){
+        console.log(error);
+        process.exit(1);
     }
+        }
+        
 
 }
 
